@@ -12,12 +12,13 @@ with sr.Microphone() as source:
 
     print(r.recognize_google(audio, language='pt'))
 '''
+#!/usr/bin/env python3
 
 from vosk import Model, KaldiRecognizer
 import os
 import pyaudio
 
-model = Model("model")
+model = Model('model')
 rec = KaldiRecognizer(model, 16000)
 
 p = pyaudio.PyAudio()
@@ -33,4 +34,5 @@ while True:
     else:
         print(rec.PartialResult())
 
-    print(rec.FinalResult())
+
+print(rec.FinalResult())
